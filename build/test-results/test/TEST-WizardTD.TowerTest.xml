@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WizardTD.TowerTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2023-10-17T23:14:07" hostname="Allens-MacBook-Pro.local" time="0.009">
+  <properties/>
+  <testcase name="testUpgradeDamage()" classname="WizardTD.TowerTest" time="0.001"/>
+  <testcase name="testGetFirst()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetRange()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetSpeed()" classname="WizardTD.TowerTest" time="0.001"/>
+  <testcase name="testSetFirstTrue()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testSet()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testShoot()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetX()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetY()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetDamageUpgradeCost()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetRangeUpgradeCost()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetCost()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testUpgradeRange()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testUpgradeSpeed()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetSpeedNumber()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testUpdateSprite()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetSpeedUpgradeCost()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetDamageNumber()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetDamage()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testFollow()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetSprite()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testGetRangeNumber()" classname="WizardTD.TowerTest" time="0.0"/>
+  <testcase name="testConstructor()" classname="WizardTD.TowerTest" time="0.001"/>
+  <testcase name="testSetFirst()" classname="WizardTD.TowerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

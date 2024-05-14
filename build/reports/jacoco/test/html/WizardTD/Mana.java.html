@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mana.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Mana.java</span></div><h1>Mana.java</h1><pre class="source lang-java linenums">package WizardTD;
+
+
+/**
+ * Represents the mana system in the WizardTD game.
+ */
+public class Mana {
+    private float initial_mana_cap, initial_mana_gained_per_second, mana_pool_spell_initial_cost, mana_pool_spell_cost_increase_per_use, mana_pool_spell_cap_multiplier, mana_pool_spell_mana_gained_multiplier;
+    private float currentMana;
+<span class="fc" id="L10">    private int quantityCasted = 0;</span>
+
+    /**
+     * Constructor for the Mana class.
+     *
+     * @param initial_mana Initial amount of mana.
+     * @param initial_mana_cap Maximum amount of mana that can be held.
+     * @param initial_mana_gained_per_second Amount of mana gained per second.
+     * @param mana_pool_spell_initial_cost Initial cost of the mana pool spell.
+     * @param mana_pool_spell_cost_increase_per_use Increase in cost of the mana pool spell with each use.
+     * @param mana_pool_spell_cap_multiplier Multiplier for the mana cap when the mana pool spell is used.
+     * @param mana_pool_spell_mana_gained_multiplier Multiplier for the mana gained when the mana pool spell is used.
+     */
+<span class="fc" id="L23">    public Mana(float initial_mana, float initial_mana_cap, float initial_mana_gained_per_second, float mana_pool_spell_initial_cost, float mana_pool_spell_cost_increase_per_use, float mana_pool_spell_cap_multiplier, float mana_pool_spell_mana_gained_multiplier){</span>
+<span class="fc" id="L24">        this.currentMana = initial_mana;</span>
+<span class="fc" id="L25">        this.initial_mana_cap = initial_mana_cap;</span>
+<span class="fc" id="L26">        this.initial_mana_gained_per_second = initial_mana_gained_per_second;</span>
+<span class="fc" id="L27">        this.mana_pool_spell_initial_cost = mana_pool_spell_initial_cost;</span>
+<span class="fc" id="L28">        this.mana_pool_spell_cost_increase_per_use = mana_pool_spell_cost_increase_per_use;</span>
+<span class="fc" id="L29">        this.mana_pool_spell_cap_multiplier = mana_pool_spell_cap_multiplier;</span>
+<span class="fc" id="L30">        this.mana_pool_spell_mana_gained_multiplier = mana_pool_spell_mana_gained_multiplier;</span>
+<span class="fc" id="L31">    }</span>
+
+    public float getCurrent(){
+<span class="fc" id="L34">        return this.currentMana;</span>
+    }
+
+    public float getCap(){
+<span class="fc" id="L38">        return this.initial_mana_cap;</span>
+    }
+
+    public float getPerSecond(){
+<span class="fc" id="L42">        return this.initial_mana_gained_per_second;</span>
+    }
+
+    /**
+     * Increases the current mana based on the mana gained per second.
+     */
+    public void tickMana(){
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (this.currentMana &lt; initial_mana_cap){</span>
+<span class="fc" id="L50">            this.currentMana += this.initial_mana_gained_per_second/60;</span>
+<span class="fc" id="L51">            return;</span>
+        }
+<span class="fc" id="L53">    }</span>
+
+    public float getPool(){
+<span class="fc" id="L56">        return this.mana_pool_spell_initial_cost;</span>
+    }
+    /**
+     * Function to handle logic when spell is casted
+     */
+    public void castSpell(){
+<span class="fc" id="L62">        this.quantityCasted++;</span>
+<span class="fc" id="L63">        this.currentMana -= this.mana_pool_spell_initial_cost;</span>
+<span class="fc" id="L64">        this.initial_mana_cap *= mana_pool_spell_cap_multiplier;</span>
+<span class="fc" id="L65">        this.mana_pool_spell_initial_cost += mana_pool_spell_cost_increase_per_use;</span>
+<span class="fc" id="L66">        return;</span>
+    }
+
+    /**
+     * Function to handle logic when monster is killed
+     * Mana is added after a corresponding multiplier to the current mana
+     * @param manaGainedOnKill
+     */
+    public void killMonster(int manaGainedOnKill){
+<span class="fc" id="L75">        float totalMultiplier = 1 + (mana_pool_spell_mana_gained_multiplier - 1) * quantityCasted;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (this.currentMana + manaGainedOnKill * totalMultiplier &gt; this.initial_mana_cap){</span>
+<span class="fc" id="L77">            this.currentMana = this.initial_mana_cap;</span>
+<span class="fc" id="L78">            return;</span>
+        }
+<span class="fc" id="L80">        this.currentMana += manaGainedOnKill * totalMultiplier;</span>
+<span class="fc" id="L81">    }</span>
+
+    /**
+     * Decreases the current mana by a specified amount.
+     *
+     * @param x Amount to decrease the current mana by.
+     */
+    public void minusMana(float x){
+<span class="fc" id="L89">        this.currentMana -= x;</span>
+<span class="fc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

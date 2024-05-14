@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tower.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Tower.java</span></div><h1>Tower.java</h1><pre class="source lang-java linenums">package WizardTD;
+import processing.core.PImage;
+import processing.core.PApplet;
+
+/**
+ * Represents a tower in the WizardTD game.
+ */
+public class Tower {
+    private float x,y,initial_tower_range, initial_tower_firing_speed, initial_tower_damage, tower_cost;
+    private PImage sprite;
+<span class="fc" id="L11">    private float time_since_last_shot = 0;</span>
+<span class="fc" id="L12">    private int numberRange = 1, numberSpeed = 1, numberDamage = 1;</span>
+<span class="fc" id="L13">    private boolean first = true;</span>
+
+    /**
+     * Constructor to initialize a tower with its position, sprite, and attributes.
+     *
+     * @param x X-coordinate of the tower.
+     * @param y Y-coordinate of the tower.
+     * @param sprite Image representing the tower.
+     * @param initial_tower_range Initial range of the tower.
+     * @param initial_tower_firing_speed Initial firing speed of the tower.
+     * @param initial_tower_damage Initial damage dealt by the tower.
+     * @param tower_cost Cost of the tower.
+     */
+<span class="fc" id="L26">    public Tower(float x, float y, PImage sprite, float initial_tower_range, float initial_tower_firing_speed, float initial_tower_damage, float tower_cost){</span>
+<span class="fc" id="L27">        this.x = x;</span>
+<span class="fc" id="L28">        this.y = y;</span>
+<span class="fc" id="L29">        this.sprite = sprite;</span>
+<span class="fc" id="L30">        this.initial_tower_range = initial_tower_range;</span>
+<span class="fc" id="L31">        this.initial_tower_firing_speed = initial_tower_firing_speed;</span>
+<span class="fc" id="L32">        this.initial_tower_damage = initial_tower_damage;</span>
+<span class="fc" id="L33">        this.tower_cost = tower_cost;</span>
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * Constructor to initialize a tower without a specified position.
+     * The default position is set to (-100, -100).
+     *
+     * @param sprite Image representing the tower.
+     * @param initial_tower_range Initial range of the tower.
+     * @param initial_tower_firing_speed Initial firing speed of the tower.
+     * @param initial_tower_damage Initial damage dealt by the tower.
+     * @param tower_cost Cost of the tower.
+     */
+    public Tower(PImage sprite, float initial_tower_range, float initial_tower_firing_speed, float initial_tower_damage, float tower_cost){
+<span class="fc" id="L47">        this(-100,-100, sprite, initial_tower_range, initial_tower_firing_speed, initial_tower_damage, tower_cost);</span>
+<span class="fc" id="L48">    }</span>
+
+    /**
+     * Draws the tower on the mouse
+     *
+     * @param x float x position of mouse
+     * @param y float y position of mouse
+     */
+    public void follow(float x, float y){
+<span class="fc" id="L57">        this.x = x;</span>
+<span class="fc" id="L58">        this.y = y;</span>
+<span class="fc" id="L59">    }</span>
+        
+    /**
+     * Increments the time since last shot
+     */
+    public void tick(){
+<span class="fc" id="L65">        time_since_last_shot++;</span>
+<span class="fc" id="L66">    }</span>
+
+    /**
+     * Draws the tower on the game screen.
+     *
+     * @param app PApplet instance to draw the tower.
+     */
+    public void draw(PApplet app){
+<span class="fc" id="L74">        app.image(this.sprite, this.x, this.y);</span>
+<span class="fc" id="L75">    }</span>
+
+    public void set(int x, int y){
+<span class="fc" id="L78">        this.x=x;</span>
+<span class="fc" id="L79">        this.y=y;</span>
+<span class="fc" id="L80">    }</span>
+
+    public float getX(){
+<span class="fc" id="L83">        return this.x;</span>
+    }
+    
+    public float getY(){
+<span class="fc" id="L87">        return this.y;</span>
+    }
+
+    public PImage getSprite(){
+<span class="fc" id="L91">        return sprite;</span>
+    }
+
+    public float getRange(){
+<span class="fc" id="L95">        return initial_tower_range;</span>
+    }
+
+    public float getSpeed(){
+<span class="fc" id="L99">        return initial_tower_firing_speed;</span>
+    }
+
+    public float getDamage(){
+<span class="fc" id="L103">        return initial_tower_damage;</span>
+    }
+
+    public float getCost(){
+<span class="fc" id="L107">        return tower_cost;</span>
+    }
+
+    public float getTimeSince(){
+<span class="fc" id="L111">        return this.time_since_last_shot/60;</span>
+    }
+
+    public void shoot(){
+<span class="fc" id="L115">        this.time_since_last_shot = 0;</span>
+<span class="fc" id="L116">        return;</span>
+    }
+
+    public void upgradeRange(){
+<span class="fc" id="L120">        this.numberRange++;</span>
+<span class="fc" id="L121">        initial_tower_range += 32;</span>
+<span class="fc" id="L122">    }</span>
+
+    public void upgradeSpeed(){
+<span class="fc" id="L125">        this.numberSpeed++;</span>
+<span class="fc" id="L126">        initial_tower_firing_speed += 0.5;</span>
+<span class="fc" id="L127">    }</span>
+
+    public void upgradeDamage(){
+<span class="fc" id="L130">        this.numberDamage++;</span>
+<span class="fc" id="L131">        initial_tower_damage *= 1.5;</span>
+<span class="fc" id="L132">    }</span>
+
+    public int getRangeNumber(){
+<span class="fc" id="L135">        return numberRange;</span>
+    }
+
+    public int getSpeedNumber(){
+<span class="fc" id="L139">        return numberSpeed;</span>
+    }
+
+    public int getDamageNumber(){
+<span class="fc" id="L143">        return numberDamage;</span>
+    }
+
+    public void updateSprite(PImage sprite2){
+<span class="fc" id="L147">        this.sprite = sprite2;</span>
+<span class="fc" id="L148">    }</span>
+
+    public float getRangeUpgradeCost(){
+<span class="fc" id="L151">        return (20 + 10*(numberRange-1));</span>
+    }
+
+    public float getSpeedUpgradeCost(){
+<span class="fc" id="L155">        return (20 + 10*(numberSpeed-1));</span>
+    }    
+
+    public float getDamageUpgradeCost(){
+<span class="fc" id="L159">        return (20 + 10*(numberDamage-1));</span>
+    }
+    
+    /**
+     * Returns the status of whether it was just placed
+     * @return true if tower is just placed
+     */
+    public boolean getFirst(){
+<span class="fc" id="L167">        return first;</span>
+    }
+
+    public void setFirst(){
+<span class="fc" id="L171">        first = false;</span>
+<span class="fc" id="L172">        return;</span>
+    }
+
+    public void setFirstTrue(){
+<span class="fc" id="L176">        first = true;</span>
+<span class="fc" id="L177">        return;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

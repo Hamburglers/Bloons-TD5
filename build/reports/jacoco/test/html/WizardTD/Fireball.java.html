@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Fireball.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Fireball.java</span></div><h1>Fireball.java</h1><pre class="source lang-java linenums">package WizardTD;
+import processing.core.PImage;
+import processing.core.PApplet;
+
+
+/**
+ * The Fireball class represents a fireball entity in the WizardTD game.
+ * The fireball is targeted towards a moveable entity and moves in the direction
+ * of the entity until it reaches its target. The class provides methods to
+ * get and set the fireball's attributes, draw the fireball, and update its position.
+ * 
+ * @param &lt;T&gt; A type that extends the Moveable interface. Represents the target entity.
+ */
+public class Fireball&lt;T extends Moveable&gt; {
+    private T entity;
+    private PImage sprite; 
+    private float overallSpeed, x, y, initial_tower_damage;
+
+    /**
+     * Constructor to initialize a Fireball object with the given attributes.
+     * 
+     * @param sprite The image representing the fireball.
+     * @param overallSpeed The speed of the fireball.
+     * @param entity The target entity towards which the fireball is directed.
+     * @param initial_tower_damage The initial damage value of the fireball.
+     */
+<span class="fc" id="L27">    public Fireball(PImage sprite, float overallSpeed, T entity, float initial_tower_damage){</span>
+<span class="fc" id="L28">        this.sprite = sprite;</span>
+<span class="fc" id="L29">        this.overallSpeed = overallSpeed;</span>
+<span class="fc" id="L30">        this.entity = entity;</span>
+<span class="fc" id="L31">        this.initial_tower_damage = initial_tower_damage;</span>
+<span class="fc" id="L32">    }</span>
+
+    /**
+     * Draws the fireball on the given PApplet canvas.
+     * 
+     * @param app The PApplet canvas on which the fireball is drawn.
+     */
+    public void draw(PApplet app){
+<span class="nc" id="L40">        app.image(this.sprite, x,y);</span>
+<span class="nc" id="L41">    }</span>
+
+    /**
+     * Sets the position of the fireball.
+     * 
+     * @param x The x-coordinate of the fireball.
+     * @param y The y-coordinate of the fireball.
+     */
+    public void set(float x, float y){
+<span class="fc" id="L50">        this.x = x;</span>
+<span class="fc" id="L51">        this.y = y;</span>
+<span class="fc" id="L52">    }</span>
+
+    public void setSpeed(float speed) {
+<span class="fc" id="L55">        this.overallSpeed = speed;</span>
+<span class="fc" id="L56">    }</span>
+
+    /**
+     * Updates the position of the fireball based on its speed and direction towards the target entity.
+     */
+    public void tick() {
+<span class="fc" id="L62">        float dx = entity.getX()+8 - this.x;  // Difference in x</span>
+<span class="fc" id="L63">        float dy = entity.getY()+8 - this.y;  // Difference in y</span>
+    
+        // Calculate the magnitude of the direction vector
+<span class="fc" id="L66">        float magnitude = (float) Math.sqrt(dx * dx + dy * dy);</span>
+    
+        // Normalize the direction vector
+<span class="fc" id="L69">        float dirX = dx / magnitude;</span>
+<span class="fc" id="L70">        float dirY = dy / magnitude;</span>
+    
+        // Update the position using the normalized direction and speed
+<span class="fc" id="L73">        this.x += overallSpeed * dirX;</span>
+<span class="fc" id="L74">        this.y += overallSpeed * dirY;</span>
+<span class="fc" id="L75">    }</span>
+    public float getX(){
+<span class="fc" id="L77">        return this.x;</span>
+    }
+    public float getY(){
+<span class="fc" id="L80">        return this.y;</span>
+    }
+    public float getDamage(){
+<span class="fc" id="L83">        return this.initial_tower_damage;</span>
+    }
+
+    /**
+     * Calculates and returns the magnitude of the direction vector towards the target entity.
+     * 
+     * @return The magnitude of the direction vector.
+     */
+    public float getMagnitude(){
+<span class="fc" id="L92">        float dx = entity.getX()+8 - this.x;  // Difference in x</span>
+<span class="fc" id="L93">        float dy = entity.getY()+8 - this.y;  // Difference in y</span>
+    
+        // Calculate the magnitude of the direction vector
+<span class="fc" id="L96">        float magnitude = (float) Math.sqrt(dx * dx + dy * dy);</span>
+<span class="fc" id="L97">        return magnitude;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

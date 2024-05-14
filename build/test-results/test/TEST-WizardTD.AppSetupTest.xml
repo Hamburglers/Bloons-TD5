@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WizardTD.AppSetupTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-17T23:13:54" hostname="Allens-MacBook-Pro.local" time="11.987">
+  <properties/>
+  <testcase name="generalTest()" classname="WizardTD.AppSetupTest" time="11.987"/>
+  <system-out><![CDATA[Graphics context not yet initialized. Skipping visualisations.
+]]></system-out>
+  <system-err><![CDATA[textMode(0) is not supported by this renderer.
+Warning: the fonts "Times" and "Lucida Bright" are not available for the Java logical font "Serif", which may have unexpected appearance or behavior. Re-enable the "Times" font to remove this warning.
+Warning: the fonts "Times" and "Lucida Bright" are not available for the Java logical font "Serif", which may have unexpected appearance or behavior. Re-enable the "Times" font to remove this warning.
+]]></system-err>
+</testsuite>

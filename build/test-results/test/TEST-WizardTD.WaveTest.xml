@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WizardTD.WaveTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-10-17T23:14:07" hostname="Allens-MacBook-Pro.local" time="0.002">
+  <properties/>
+  <testcase name="testGetDuration()" classname="WizardTD.WaveTest" time="0.001"/>
+  <testcase name="testSetQuantity()" classname="WizardTD.WaveTest" time="0.0"/>
+  <testcase name="testGetTotalQuantity()" classname="WizardTD.WaveTest" time="0.0"/>
+  <testcase name="testGetPreWavePause()" classname="WizardTD.WaveTest" time="0.001"/>
+  <testcase name="testGetMonsters()" classname="WizardTD.WaveTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

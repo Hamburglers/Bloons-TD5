@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Path.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Path.java</span></div><h1>Path.java</h1><pre class="source lang-java linenums">package WizardTD;
+
+import java.util.*;
+
+/**
+ * Represents a pathfinding system in the WizardTD game using Breadth-First Search (BFS).
+ */
+<span class="fc" id="L8">public class Path {</span>
+
+    // BFS Node class
+    /**
+     * Inner class representing a node in the BFS traversal.
+     */
+    class Node {
+        public int x, y;
+        public Node parent;
+
+        /**
+         * Constructor for the Node class.
+         *
+         * @param x X-coordinate of the node.
+         * @param y Y-coordinate of the node.
+         */
+<span class="fc" id="L24">        public Node(int x, int y) {</span>
+<span class="fc" id="L25">            this.x = x;</span>
+<span class="fc" id="L26">            this.y = y;</span>
+<span class="fc" id="L27">        }</span>
+        
+        /**
+         * Determines if two nodes are equal based on their x and y coordinates.
+         *
+         * @param o Object to compare with.
+         * @return True if the nodes are equal, false otherwise.
+         */
+        @Override
+        public boolean equals(Object o) {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (this == o) return true;</span>
+<span class="pc bpc" id="L38" title="2 of 4 branches missed.">            if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L39">            Node node = (Node) o;</span>
+<span class="fc bfc" id="L40" title="All 4 branches covered.">            return x == node.x &amp;&amp; y == node.y;</span>
+        }
+
+        /**
+         * Generates a hash code for the node based on its x and y coordinates.
+         *
+         * @return Hash code of the node.
+         */
+        @Override
+        public int hashCode() {
+<span class="fc" id="L50">            return Objects.hash(x, y);</span>
+        }
+    }
+
+    /**
+     * Finds the shortest path from a start node to a goal node in a given grid using BFS.
+     *
+     * @param grid 2D array representing the game grid. A value of 0 indicates a walkable cell, and -1 indicates the goal.
+     * @param start Starting node for the pathfinding.
+     * @param goal Goal node for the pathfinding.
+     * @return List of nodes representing the path from start to goal. Returns null if no path is found.
+     */
+    public List&lt;Node&gt; findPath(int[][] grid, Node start, Node goal) {
+<span class="fc" id="L63">        Queue&lt;Node&gt; queue = new LinkedList&lt;&gt;();</span>
+<span class="fc" id="L64">        Set&lt;Node&gt; visited = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L65">        queue.add(start);</span>
+
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        while (!queue.isEmpty()) {</span>
+<span class="fc" id="L68">            Node current = queue.poll();</span>
+<span class="fc" id="L69">            visited.add(current);</span>
+
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            if (current.equals(goal)) {</span>
+<span class="fc" id="L72">                List&lt;Node&gt; pathNodes = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">                while (current != null) {</span>
+<span class="fc" id="L74">                    pathNodes.add(current);</span>
+<span class="fc" id="L75">                    current = current.parent;</span>
+                }
+<span class="fc" id="L77">                Collections.reverse(pathNodes);</span>
+<span class="fc" id="L78">                return pathNodes;</span>
+            }
+
+            // Check neighbors
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            for (int[] dir : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {</span>
+<span class="fc" id="L83">                int newX = current.x + dir[0];</span>
+<span class="fc" id="L84">                int newY = current.y + dir[1];</span>
+
+<span class="fc bfc" id="L86" title="All 8 branches covered.">                if (newX &gt;= 0 &amp;&amp; newX &lt; grid[0].length &amp;&amp; newY &gt;= 0 &amp;&amp; newY &lt; grid.length) {</span>
+<span class="fc" id="L87">                    Node neighbor = new Node(newX, newY);</span>
+<span class="fc bfc" id="L88" title="All 4 branches covered.">                    if (!visited.contains(neighbor) &amp;&amp; !queue.contains(neighbor)) {</span>
+<span class="fc bfc" id="L89" title="All 4 branches covered.">                        if (grid[newY][newX] == 0 || grid[newY][newX] == -1) {</span>
+<span class="fc" id="L90">                            neighbor.parent = current;</span>
+<span class="fc" id="L91">                            queue.add(neighbor);</span>
+                        }
+                    }
+                }
+            }
+<span class="fc" id="L96">        }</span>
+<span class="fc" id="L97">        return null; // No path found</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

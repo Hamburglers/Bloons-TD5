@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WizardTD.GremlinTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-10-17T23:14:07" hostname="Allens-MacBook-Pro.local" time="0.004">
+  <properties/>
+  <testcase name="testPathMethods()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testDeathMethods()" classname="WizardTD.GremlinTest" time="0.001"/>
+  <testcase name="testGremlinInstantiation()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testSaveAndResetMethods()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testAttributeGetters()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testHealthMethods()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testSpeedMethods()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testDyingMethods()" classname="WizardTD.GremlinTest" time="0.001"/>
+  <testcase name="testSetSprites()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testTickMethod()" classname="WizardTD.GremlinTest" time="0.001"/>
+  <testcase name="testPositionGetters()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <testcase name="testSetPosition()" classname="WizardTD.GremlinTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

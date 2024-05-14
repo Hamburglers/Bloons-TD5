@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WizardTD.AppTest" tests="42" skipped="0" failures="0" errors="0" timestamp="2023-10-17T23:14:06" hostname="Allens-MacBook-Pro.local" time="1.454">
+  <properties/>
+  <testcase name="testGetNumberOfSelected_allTrue()" classname="WizardTD.AppTest" time="0.013"/>
+  <testcase name="testIsMouseOverTower_leftOfBounds()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressM_CastSpell()" classname="WizardTD.AppTest" time="0.008"/>
+  <testcase name="testInitiateMonster()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testManaPoolWithEnoughMana()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPress1()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPress2()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPress3()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressP()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testKeyPressT()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testRotateBy90Degrees()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testMoveEntities()" classname="WizardTD.AppTest" time="1.097"/>
+  <testcase name="testPause()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testHoverURange()" classname="WizardTD.AppTest" time="0.299"/>
+  <testcase name="testHoverUSpeed()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testGameOverOrGameWin()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testRotateBy45Degrees()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testIsMouseOverTower_aboveBounds()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testGetNumberOfSelected_onlyDamageTrue()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressM_NotEnoughMana()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressF_Fastforward()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testRandomKey()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testFindTile()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testIsMouseOverTower_rightOfBounds()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testManaPoolWithInsufficientMana()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testMouseMoved()" classname="WizardTD.AppTest" time="0.012"/>
+  <testcase name="testIsMouseOverTower_insideBounds()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressRandom_GameWin()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testGetNumberOfSelected_allFalse()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testKeyPressR_GameOver()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testFastforward()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testDisableKeybindsIfGameNotStarted()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testGetNumberOfSelected_onlySpeedTrue()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testHoverNormalStart()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testHoverUDamage()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testHoverEndlessStart()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testGetRandomEntry()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testIsMouseOverTower_belowBounds()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testTowerPlacement()" classname="WizardTD.AppTest" time="0.006"/>
+  <testcase name="testKeyPressF_NormalSpeed()" classname="WizardTD.AppTest" time="0.0"/>
+  <testcase name="testGetNumberOfSelected_onlyRangeTrue()" classname="WizardTD.AppTest" time="0.001"/>
+  <testcase name="testKeyPressR_GameWin()" classname="WizardTD.AppTest" time="0.0"/>
+  <system-out><![CDATA[Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+Graphics context not yet initialized. Skipping visualisations.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

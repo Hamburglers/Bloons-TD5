@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Wave.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Wave.java</span></div><h1>Wave.java</h1><pre class="source lang-java linenums">package WizardTD;
+import java.util.*;
+
+/**
+ * Represents a wave of monsters in the WizardTD game.
+ */
+public class Wave {
+    private float duration;
+    private float preWavePause;
+    private List&lt;Monster&gt; monsters;
+<span class="fc" id="L11">    private int totalQuantity = 0;</span>
+
+    /**
+     * Constructor to initialize a wave with its duration, pause before the wave, list of monsters, and total quantity.
+     *
+     * @param duration Duration of the wave.
+     * @param preWavePause Duration of the pause before the wave starts.
+     * @param monsters List of monsters in the wave.
+     * @param totalQuantity Total number of monsters in the wave.
+     */
+<span class="fc" id="L21">    public Wave(float duration, float preWavePause, List&lt;Monster&gt; monsters, int totalQuantity) {</span>
+<span class="fc" id="L22">        this.duration = duration;</span>
+<span class="fc" id="L23">        this.preWavePause = preWavePause;</span>
+<span class="fc" id="L24">        this.monsters = monsters;</span>
+<span class="fc" id="L25">        this.totalQuantity = totalQuantity;</span>
+<span class="fc" id="L26">    }</span>
+
+    public float getDuration() {
+<span class="fc" id="L29">        return duration;</span>
+    }
+
+    public float getPreWavePause() {
+<span class="fc" id="L33">        return preWavePause;</span>
+    }
+
+    public List&lt;Monster&gt; getMonsters() {
+<span class="fc" id="L37">        return monsters;</span>
+    }
+
+    public int getTotalQuantity() {
+<span class="fc" id="L41">        return totalQuantity;</span>
+    }
+
+    public void setQuantity(int givenQuantity) {
+<span class="fc" id="L45">        this.totalQuantity = givenQuantity;</span>
+<span class="fc" id="L46">    }</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

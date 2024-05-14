@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Beetle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Beetle.java</span></div><h1>Beetle.java</h1><pre class="source lang-java linenums">package WizardTD;
+import processing.core.PImage;
+import processing.core.PApplet;
+import java.util.*;
+
+
+/**
+ * The Beetle class represents a beetle monster in the WizardTD game.
+ * The beetle is a type of monster that can move along a path and has its own
+ * unique attributes and behaviors. The class provides methods to get and set
+ * the beetle's attributes, draw the beetle, update its position, and handle
+ * its interactions with other game entities.
+ */
+public class Beetle extends Monster implements Moveable {
+    private float x;
+    private float y;
+    private PImage sprite;
+    private float xvel;
+    private float yvel;
+    private List&lt;Path.Node&gt; path;
+    private float currentHealth;
+
+    // Instance variables to store the initial values
+    private float initialX;
+    private float initialY;
+    private List&lt;Path.Node&gt; savedPath;
+    private float saveX, saveY;
+
+
+    /**
+     * Constructor to initialize a beetle object with the given attributes.
+     * 
+     * @param x The x-coordinate of the beetle's initial position.
+     * @param y The y-coordinate of the beetle's initial position.
+     * @param sprite The image representing the beetle.
+     * @param hp The beetle's health points.
+     * @param speed The beetle's movement speed.
+     * @param armour The beetle's armor value.
+     * @param manaGainedOnKill The amount of mana gained when the beetle is killed.
+     * @param quantity The number of beetles.
+     */
+    public Beetle(int x, int y, PImage sprite, float hp, float speed, float armour, int manaGainedOnKill, int quantity) {
+        // Call the super constructor of the Monster class with the correct arguments
+<span class="fc" id="L44">        super(&quot;beetle&quot;, hp, speed, armour, manaGainedOnKill, quantity);</span>
+<span class="fc" id="L45">        this.x = x;</span>
+<span class="fc" id="L46">        this.y = y;</span>
+<span class="fc" id="L47">        this.sprite = sprite;</span>
+<span class="fc" id="L48">        this.xvel = 0;</span>
+<span class="fc" id="L49">        this.yvel = 0;</span>
+<span class="fc" id="L50">        this.currentHealth = hp;</span>
+<span class="fc" id="L51">    }</span>
+
+    /**
+     * Updates the position of the beetle based on its speed.
+     */
+    public void tick() {
+<span class="fc" id="L57">        this.x += this.xvel;</span>
+<span class="fc" id="L58">        this.y += this.yvel;</span>
+<span class="fc" id="L59">    }</span>
+
+    /**
+     * Draws the beetle on the given PApplet canvas.
+     * 
+     * @param app The PApplet canvas on which the beetle is drawn.
+     */
+    public void draw(PApplet app) {
+<span class="nc" id="L67">        app.image(this.sprite, this.x, this.y);</span>
+<span class="nc" id="L68">    }</span>
+
+    public void set(float x, float y) {
+<span class="fc" id="L71">        this.x = x;</span>
+<span class="fc" id="L72">        this.y = y;</span>
+<span class="fc" id="L73">    }</span>
+
+    public void setSpeed(float x, float y) {
+<span class="fc" id="L76">        this.xvel = x;</span>
+<span class="fc" id="L77">        this.yvel = y;</span>
+<span class="fc" id="L78">    }</span>
+
+    public float getSpeedX() {
+<span class="fc" id="L81">        return this.xvel;</span>
+    }
+
+    public float getSpeedY() {
+<span class="fc" id="L85">        return this.yvel;</span>
+    }
+
+    public void setPath(List&lt;Path.Node&gt; path) {
+<span class="fc" id="L89">        this.path = path;</span>
+<span class="fc" id="L90">    }</span>
+
+    public List&lt;Path.Node&gt; getPath() {
+<span class="fc" id="L93">        return this.path;</span>
+    }
+
+    public float getX() {
+<span class="fc" id="L97">        return this.x;</span>
+    }
+
+    public float getY() {
+<span class="fc" id="L101">        return this.y;</span>
+    }
+
+    public float getOverallSpeed() {
+<span class="fc" id="L105">        return this.speed;</span>
+    }
+
+    public void setOverallSpeed(float newSpeed) {
+<span class="fc" id="L109">        this.speed = newSpeed;</span>
+<span class="fc" id="L110">    }</span>
+
+    public float getCurrentHealth() {
+<span class="fc" id="L113">        return this.currentHealth;</span>
+    }
+
+    public float getHealth() {
+<span class="fc" id="L117">        return this.hp;</span>
+    }
+
+    /**
+     * Applies damage to the entity and checks if its health drops to zero or below.
+     *
+     * @param damage The amount of damage to be inflicted on the entity.
+     * @return true if the entity's health drops to zero or below after taking the damage; false otherwise.
+     */
+    public boolean hit(float damage) {
+<span class="fc" id="L127">        this.currentHealth -= damage*this.armour;</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        if (this.currentHealth &lt;= 0) {</span>
+<span class="fc" id="L129">            return true;</span>
+        }
+<span class="fc" id="L131">        return false;</span>
+    }
+
+    public int getMana() {
+<span class="fc" id="L135">        return this.manaGainedOnKill;</span>
+    }
+
+    public void reset() {
+<span class="fc" id="L139">        this.x = initialX;</span>
+<span class="fc" id="L140">        this.y = initialY;</span>
+<span class="fc" id="L141">        this.path = new ArrayList&lt;&gt;(savedPath); // Reset the path to the saved path</span>
+<span class="fc" id="L142">        this.xvel = saveX;</span>
+<span class="fc" id="L143">        this.yvel = saveY;</span>
+<span class="fc" id="L144">    }</span>
+
+    public void savePath(List&lt;Path.Node&gt; path) {
+<span class="fc" id="L147">        this.savedPath = new ArrayList&lt;&gt;(path); // Save a copy of the path</span>
+<span class="fc" id="L148">    }</span>
+    public void savePosition(float x, float y){
+<span class="fc" id="L150">        this.initialX = x;</span>
+<span class="fc" id="L151">        this.initialY = y;</span>
+<span class="fc" id="L152">    }</span>
+    public void saveSpeed(float x, float y){
+<span class="fc" id="L154">        this.saveX = x;</span>
+<span class="fc" id="L155">        this.saveY = y;</span>
+<span class="fc" id="L156">    }</span>
+}    
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

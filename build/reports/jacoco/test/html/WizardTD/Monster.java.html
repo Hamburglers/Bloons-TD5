@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Monster.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">scaffold</a> &gt; <a href="index.source.html" class="el_package">WizardTD</a> &gt; <span class="el_source">Monster.java</span></div><h1>Monster.java</h1><pre class="source lang-java linenums">package WizardTD;
+
+import java.util.List;
+
+/**
+ * The Monster class represents a monster entity in the WizardTD game.
+ * Each monster has attributes such as type, health points (hp), speed, armour,
+ * mana gained upon being killed, and quantity. The class provides methods to
+ * get and set these attributes. Additionally, there are methods related to the
+ * monster's path and position that are intended to be overridden by subclasses.
+ */
+public class Monster {
+    protected String type;
+    protected float hp;
+    protected float speed;
+    protected float armour;
+    protected int manaGainedOnKill;
+    protected int quantity;
+
+    /**
+     * Constructor to initialize a Monster object with the given attributes.
+     * 
+     * @param type Type of the monster.
+     * @param hp Health points of the monster.
+     * @param speed Speed of the monster.
+     * @param armour Armour value of the monster.
+     * @param manaGainedOnKill Mana gained when the monster is killed.
+     * @param quantity Quantity of the monster.
+     */
+<span class="fc" id="L30">    public Monster(String type, float hp, float speed, float armour, int manaGainedOnKill, int quantity) {</span>
+<span class="fc" id="L31">        this.type = type;</span>
+<span class="fc" id="L32">        this.hp = hp;</span>
+<span class="fc" id="L33">        this.speed = speed;</span>
+<span class="fc" id="L34">        this.armour = armour;</span>
+<span class="fc" id="L35">        this.manaGainedOnKill = manaGainedOnKill;</span>
+<span class="fc" id="L36">        this.quantity = quantity;</span>
+<span class="fc" id="L37">    }</span>
+
+    // Getter methods for each attribute
+    public String getType() {
+<span class="fc" id="L41">        return type;</span>
+    }
+
+    public float getHP() {
+<span class="fc" id="L45">        return hp;</span>
+    }
+    public void setHP(float hp) {
+<span class="fc" id="L48">        this.hp = hp;</span>
+<span class="fc" id="L49">    }</span>
+
+    public float getSpeed() {
+<span class="fc" id="L52">        return speed;</span>
+    }
+    public void setSpeed(float givenSpeed) {
+<span class="fc" id="L55">        this.speed = givenSpeed;</span>
+<span class="fc" id="L56">    }</span>
+
+    public float getArmour() {
+<span class="fc" id="L59">        return armour;</span>
+    }
+    public void setArmour(float givenArmour) {
+<span class="fc" id="L62">        this.armour = givenArmour;</span>
+<span class="fc" id="L63">    }</span>
+
+    public int getManaGainedOnKill() {
+<span class="fc" id="L66">        return manaGainedOnKill;</span>
+    }
+
+    public int getQuantity() {
+<span class="fc" id="L70">        return quantity;</span>
+    }
+    public void setQuantity(int givenQuant) {
+<span class="fc" id="L73">        this.quantity = givenQuant;</span>
+<span class="fc" id="L74">    }</span>
+
+    /**
+     * Placeholder method to save the path of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param path List of nodes representing the path.
+     */
+    public void savePath(List&lt;Path.Node&gt; path) {
+        // Placeholder implementation
+<span class="fc" id="L83">    }</span>
+
+    /**
+     * Placeholder method to save the position of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param x X-coordinate of the monster.
+     * @param y Y-coordinate of the monster.
+     */
+    public void savePosition(float x, float y) {
+        // Placeholder implementation
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * Placeholder method to save the speed of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param x Speed in the X-direction.
+     * @param y Speed in the Y-direction.
+     */
+    public void saveSpeed(float x, float y) {
+        // Placeholder implementation
+<span class="fc" id="L103">    }</span>
+
+    /**
+     * Placeholder method to set the path of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param path List of nodes representing the path.
+     */
+    public void setPath(List&lt;Path.Node&gt; path) {
+        // Placeholder implementation
+<span class="fc" id="L112">    }</span>
+
+    /**
+     * Placeholder method to set the position of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param x X-coordinate of the monster.
+     * @param y Y-coordinate of the monster.
+     */
+    public void set(float x, float y) {
+        // Placeholder implementation
+<span class="fc" id="L122">    }</span>
+
+    /**
+     * Placeholder method to set the speed of the monster. Intended to be overridden by subclasses.
+     * 
+     * @param x Speed in the X-direction.
+     * @param y Speed in the Y-direction.
+     */
+    public void setSpeed(float x, float y) {
+        // Placeholder implementation
+<span class="fc" id="L132">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
