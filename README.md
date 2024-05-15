@@ -2,11 +2,11 @@
 An advanced tower defense game using Java, inspired by the popular game Bloons TD5\
 
 # GALLERY
-97% Test Coverage with JacocoTestReport\
-<img width="942" alt="Screenshot 2024-05-15 at 9 53 44 AM" src="https://github.com/Hamburglers/Bloons-TD5/assets/97949512/d5abb88c-6653-471b-8a3d-48dbb5dff381">
 <img width="739" alt="Screenshot 2024-05-15 at 10 15 28 AM" src="https://github.com/Hamburglers/Bloons-TD5/assets/97949512/a9486e9d-df82-4494-a5d2-d3bd4643296e">
 <img width="739" alt="Screenshot 2024-05-15 at 10 17 09 AM" src="https://github.com/Hamburglers/Bloons-TD5/assets/97949512/f3b56684-adcf-49c8-b6da-a5e874b2ed1f">
+<img width="942" alt="Screenshot 2024-05-15 at 9 53 44 AM" src="https://github.com/Hamburglers/Bloons-TD5/assets/97949512/d5abb88c-6653-471b-8a3d-48dbb5dff381">
 
+97% Test Coverage with JacocoTestReport
 
 # HOW TO RUN
 Make sure Gradle is installed\
